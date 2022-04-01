@@ -1,7 +1,9 @@
 .Weather {
-  border: 1px solid rgb(24, 143, 255);
+  border: 1px solid rgb(233, 222, 250);
   border-radius: 4px;
   margin: 40px 15% 0 15%;
+  background: linear-gradient(-20deg, rgb(233, 222, 250) 10%, rgb(251, 252, 219) 40%); 
+
 }
 
 .form {

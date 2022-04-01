@@ -1,14 +1,10 @@
 import './App.css';
-import Weather
-
-
-from './Weather';
+import Weather from './Weather';
 function App() {
   return (
     <div className="App">
       <div className="container">
-       
-        <Weather/>
+        <Weather defaultCity="Sarajevo" />
         <footer>
           This project is created by Elmedina{' '}
           <a
@@ -18,7 +14,6 @@ function App() {
           >
             Git
           </a>
-          
         </footer>
       </div>
     </div>
