@@ -3,6 +3,7 @@ import FormattedDate from './FormattedDate';
 import WeatherIcon from './WeatherIcon';
 import WeatherTemperature from './WeatherTemperature';
 import MinMaxTemperature from './MinMaxTemperature';
+import FeelsLike from './FeelsLike';
 
 export default function WeatherInfo(props) {
   let dataAll = props.res;
@@ -52,7 +53,7 @@ export default function WeatherInfo(props) {
         <div className="col-10">
           <h5>Details:</h5>
           <ul className="detailsList d-flex justify-content-around">
-            <li>Feels Like:{dataAll.feel_like}℃ </li>
+            <FeelsLike feels={dataAll.feel_like} unitC={unitM} />
             <li>Humidity:{dataAll.humidity}%</li>
             <li>Visibility:{dataAll.visibility}m</li>
             <li>Wind speed:{dataAll.wind}</li>
