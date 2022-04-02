@@ -23,6 +23,7 @@ export default function Weather(props) {
       visibility: response.data.visibility,
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
+      unit:"celsius"
     });
   }
 

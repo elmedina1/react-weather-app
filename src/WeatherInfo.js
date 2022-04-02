@@ -24,12 +24,12 @@ export default function WeatherInfo(props) {
             <MinMaxTemperature
               max={dataAll.max_temp}
               min={dataAll.min_temp}
-              statt={"celsius"}
+              measurment={dataAll.unit}
             />
           </div>
 
           <div className="col-6">
-            <WeatherTemperature celsius={dataAll.temp} />
+            <WeatherTemperature celsius={dataAll.temp} measurement={dataAll.unit} />
           </div>
         </div>
       </div>

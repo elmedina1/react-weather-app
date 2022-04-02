@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MinMaxTemperature from './MinMaxTemperature';
 
 export default function WeatherTemperature(props) {
-  const [units, setUnits] = useState('celsius');
+  const [units, setUnits] = useState(props.measurement);
 
   function convertToFahr(event) {
     event.preventDefault();
@@ -10,7 +10,6 @@ export default function WeatherTemperature(props) {
   }
   function convertToCel(event) {
     event.preventDefault();
-    
   }
 
   if (units === 'celsius') {
@@ -37,7 +36,6 @@ export default function WeatherTemperature(props) {
           </a>{' '}
           | ℉{' '}
         </sup>
-      
       </h1>
     );
   }
