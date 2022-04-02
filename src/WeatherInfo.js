@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import FormattedDate from './FormattedDate';
 import WeatherIcon from './WeatherIcon';
 import WeatherTemperature from './WeatherTemperature';
@@ -6,6 +6,14 @@ import MinMaxTemperature from './MinMaxTemperature';
 
 export default function WeatherInfo(props) {
   let dataAll = props.res;
+ let [unitM, setUnit] = useState(dataAll.unit);
+
+function handleUnitsChange(event) {
+  setUnit("farenheit");
+
+}
+
+
   return (
     <div className="WeatherInfo">
       <div className="location">
@@ -24,12 +32,16 @@ export default function WeatherInfo(props) {
             <MinMaxTemperature
               max={dataAll.max_temp}
               min={dataAll.min_temp}
-              measurment={dataAll.unit}
+              measurment={unitM}
             />
           </div>
 
           <div className="col-6">
-            <WeatherTemperature celsius={dataAll.temp} measurement={dataAll.unit} />
+            <WeatherTemperature
+              celsius={dataAll.temp}
+              measurement={unitM}
+              onMeasureChange={handleUnitsChange}
+            />
           </div>
         </div>
       </div>

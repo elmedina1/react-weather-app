@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MinMaxTemperature from './MinMaxTemperature';
+
 
 export default function WeatherTemperature(props) {
   const [units, setUnits] = useState(props.measurement);
@@ -7,6 +7,7 @@ export default function WeatherTemperature(props) {
   function convertToFahr(event) {
     event.preventDefault();
     setUnits('fahrenheit');
+    props.onMeasureChange();
   }
   function convertToCel(event) {
     event.preventDefault();
