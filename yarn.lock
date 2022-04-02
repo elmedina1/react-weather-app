@@ -7037,7 +7037,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.8.1":
+"prop-types@*", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -7112,6 +7112,11 @@
     "http-errors" "1.8.1"
     "iconv-lite" "0.4.24"
     "unpipe" "1.0.0"
+
+"react-animated-weather@^4.0.1":
+  "integrity" "sha512-ipEa3yW3rld1UAHAmm7Bltn5BOH3O2B491R0ws51kwFtqQ6fc5KWUiBQ0e4sO/XjoeqCkAN/Y98lWx1qZMR84g=="
+  "resolved" "https://registry.npmjs.org/react-animated-weather/-/react-animated-weather-4.0.1.tgz"
+  "version" "4.0.1"
 
 "react-app-polyfill@^3.0.0":
   "integrity" "sha512-sZ41cxiU5llIB003yxxQBYrARBqe0repqPTTYBTmMqTz9szeBbE37BehCE891NZsmdZqqP+xWKdT3eo3vOzN8w=="

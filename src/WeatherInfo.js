@@ -1,5 +1,8 @@
 import React from 'react';
 import FormattedDate from './FormattedDate';
+import WeatherIcon from './WeatherIcon';
+import WeatherTemperature from './WeatherTemperature';
+import MinMaxTemperature from './MinMaxTemperature';
 
 export default function WeatherInfo(props) {
   let dataAll = props.res;
@@ -7,11 +10,7 @@ export default function WeatherInfo(props) {
     <div className="WeatherInfo">
       <div className="location">
         <h1>
-          {dataAll.city}{' '}
-          <img
-            src={dataAll.icon}
-            alt={dataAll.description}
-          />
+          {dataAll.city} <WeatherIcon code={dataAll.icon} />
         </h1>
         <div className="row">
           <div className="col-4 todayWeather">
@@ -21,19 +20,16 @@ export default function WeatherInfo(props) {
             </h6>
 
             <h4>{dataAll.description}</h4>
-            <h4>
-              <span className="minMax">Max:</span> {dataAll.max_temp}{' '}
-              <sup className="unitsCurr"> ℃</sup>{' '}
-              <span className="minMax">Min:</span> {dataAll.min_temp}{' '}
-              <sup className="unitsCurr"> ℃</sup>
-            </h4>
+
+            <MinMaxTemperature
+              max={dataAll.max_temp}
+              min={dataAll.min_temp}
+              statt={"celsius"}
+            />
           </div>
 
           <div className="col-6">
-            <h1 className="currTemp">
-              {dataAll.temp}
-              <sup className="units">℃ ℉ </sup>
-            </h1>
+            <WeatherTemperature celsius={dataAll.temp} />
           </div>
         </div>
       </div>

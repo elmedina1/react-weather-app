@@ -21,14 +21,14 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       visibility: response.data.visibility,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
     });
   }
 
   function searchCity() {
     let apiKey = '860125333e4516777dadc25699e05462';
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metrics`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
