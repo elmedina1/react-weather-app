@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import WeatherTemperature from './WeatherTemperature';
+import React from 'react';
+import './Weather.css';
+
 
 
 
@@ -9,16 +10,16 @@ console.log('what is unit' + props.measurment);
 
 if (props.measurment === 'celsius') {
   return (
-    <h4>
-      <span className="minMax">Max:</span> {props.max}{' '}
+    <h4 className='minMax'>
+      <span className="minMax">Max:</span> {Math.round(props.max)}{' '}
       <sup className="unitsCurr"> °</sup>
-      <span className="minMax">Min:</span> {props.min}{' '}
+      <span className="minMax">Min:</span> {Math.round(props.min)}{' '}
       <sup className="unitsCurr"> °</sup>
     </h4>
   );
 } else {
   return (
-    <h4>
+    <h4 className='minMax'>
       <span className="minMax">Max:</span>{' '}
       {Math.round((props.max * 9) / 5 + 32)} <sup className="unitsCurr"> °</sup>
       <span className="minMax">Min:</span>{' '}
