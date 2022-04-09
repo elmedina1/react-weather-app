@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Weather.css';
 import axios from 'axios';
 import WeatherInfo from './WeatherInfo';
-
+import WeatherForecast from './WeatherForecast';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -24,12 +24,11 @@ export default function Weather(props) {
       visibility: response.data.visibility,
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
-      unit:"celsius"
+      unit: 'celsius',
+      lat: response.data.coord.lat,
+      lon:response.data.coord.lon,
     });
   }
-
-
-
 
   function searchCity() {
     let apiKey = '860125333e4516777dadc25699e05462';
@@ -67,6 +66,7 @@ export default function Weather(props) {
         </form>
 
         <WeatherInfo res={weatherData} />
+        <WeatherForecast lat={weatherData.lat} long={weatherData.lon} />
       </div>
     );
   } else {
