@@ -18,17 +18,16 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <div className="card-group">
-            {forecast.map(function(dailyForecast,index){
- if (index<5){
-return(
-<div key={index}>
-<WeatherForcastDay day={dailyForecast} />
-</div>)
- }
-
-            })}
-         
+        <div className="card-group d-flex justify-content-around grupa">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div key={index}>
+                  <WeatherForcastDay day={dailyForecast} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
